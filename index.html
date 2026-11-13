@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Max_xd811 — Windhawk Mods</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #050506;
+    color: #e9e9ed;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.wave {
+    position: absolute;
+    width: 1100px;
+    height: 650px;
+    left: 50%;
+    top: 35%;
+    background: #101d59;
+    filter: blur(110px);
+    opacity: 0.55;
+    border-radius: 45% 55% 65% 35% / 50% 40% 60% 50%;
+    animation: waveMove 13s ease-in-out infinite alternate;
+}
+
+.wave.second {
+    width: 850px;
+    height: 550px;
+    left: 65%;
+    top: 75%;
+    background: #111d4b;
+    filter: blur(130px);
+    opacity: 0.38;
+    animation: waveMove2 17s ease-in-out infinite alternate;
+}
+
+@keyframes waveMove {
+    0% {
+        transform: translate(-60%, -40%) rotate(-15deg) scale(1);
+        border-radius: 45% 55% 65% 35% / 50% 40% 60% 50%;
+    }
+
+    50% {
+        transform: translate(-35%, -55%) rotate(25deg) scale(1.2);
+        border-radius: 65% 35% 40% 60% / 35% 60% 40% 65%;
+    }
+
+    100% {
+        transform: translate(-65%, -35%) rotate(-30deg) scale(1.1);
+        border-radius: 35% 65% 55% 45% / 60% 35% 65% 40%;
+    }
+}
+
+@keyframes waveMove2 {
+    0% {
+        transform: translate(-30%, -30%) rotate(15deg) scale(1);
+        border-radius: 60% 40% 30% 70%;
+    }
+
+    100% {
+        transform: translate(-65%, -55%) rotate(-25deg) scale(1.25);
+        border-radius: 35% 65% 70% 30%;
+    }
+}
+
+/* Content */
+
+header, main, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+
+header {
+    padding: 75px 9% 95px;
+}
+
+.header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #777d9b;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: clamp(45px, 8vw, 82px);
+    font-weight: 600;
+    letter-spacing: -5px;
+    margin-top: 22px;
+}
+
+.accent {
+    width: 48px;
+    height: 3px;
+    background: #5268cf;
+    margin-top: 27px;
+    box-shadow: 0 0 20px #344dbb;
+}
+
+.header-description {
+    margin-top: 22px;
+    color: #858591;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Mods */
+
+main {
+    padding: 0 9% 100px;
+    max-width: 1200px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 38px;
+}
+
+.section-heading h2 {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.mod {
+    border-top: 1px solid #30303b;
+    padding: 27px 0 45px;
+}
+
+.mod-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.mod h3 {
+    font-size: clamp(19px, 3vw, 25px);
+    font-weight: 500;
+    letter-spacing: -0.7px;
+}
+
+.mod-version {
+    color: #85899c;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+.visit {
+    text-decoration: none;
+    color: #b5c1ff;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    border: 1px solid #394777;
+    padding: 12px 16px;
+    transition: 0.25s;
+    white-space: nowrap;
+}
+
+.visit:hover {
+    background: #19234b;
+    border-color: #6479dc;
+    color: white;
+}
+
+/* Previews */
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.preview-item {
+    min-width: 0;
+}
+
+.preview-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #9ba8e0;
+    margin-bottom: 12px;
+}
+
+.preview {
+    width: 100%;
+    display: block;
+    background: #0b0c12;
+    border: 1px solid #30303b;
+    object-fit: contain;
+}
+
+/* Description */
+
+.mod-description {
+    color: #a0a0ad;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-top: 22px;
+    max-width: 700px;
+}
+
+.mod-description strong {
+    color: #d4d4df;
+    font-weight: 500;
+}
+
+/* Footer */
+
+footer {
+    border-top: 1px solid #292932;
+    padding: 25px 9%;
+    color: #777783;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 65px 7% 80px;
+    }
+
+    main {
+        padding: 0 7% 70px;
+    }
+
+    h1 {
+        letter-spacing: -3px;
+    }
+
+    .mod-top {
+        align-items: flex-start;
+    }
+
+    .visit {
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    .preview-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    footer {
+        padding: 22px 7%;
+    }
+
+    .wave {
+        width: 750px;
+        height: 550px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wave, .wave.second {
+        animation: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <div class="wave"></div>
+    <div class="wave second"></div>
+</div>
+
+<header>
+    <div class="header-label">Windhawk Mods</div>
+
+    <h1>Max_xd811</h1>
+
+    <div class="accent"></div>
+
+    <p class="header-description">
+        Small projects, customizations and experiments<br>
+        for the Windows desktop.
+    </p>
+</header>
+
+<main>
+
+    <div class="section-heading">
+        <h2>Mods Created</h2>
+    </div>
+
+    <article class="mod">
+
+        <div class="mod-top">
+            <div>
+                <h3>Startup Line Animation</h3>
+                <div class="mod-version">VERSION 1.2.1 / WINDHAWK</div>
+            </div>
+
+            <!-- PEGA AQUÍ EL LINK DE TU MOD EN WINDHAWK -->
+            <a class="visit" href="#" target="_blank" rel="noopener">
+                VIEW MOD ↗
+            </a>
+        </div>
+
+        <div class="preview-grid">
+
+            <div class="preview-item">
+                <div class="preview-label">01 / GLASS EFFECT</div>
+                <img
+                    class="preview"
+                    src="mods/startup-line-animation/glass.gif"
+                    alt="Startup Line Animation - Glass Effect"
+                >
+            </div>
+
+            <div class="preview-item">
+                <div class="preview-label">02 / SOLID COLOR</div>
+                <img
+                    class="preview"
+                    src="mods/startup-line-animation/solid.gif"
+                    alt="Startup Line Animation - Solid Color"
+                >
+            </div>
+
+        </div>
+
+        <p class="mod-description">
+            A customizable startup animation that reveals a message
+            as a sleek line sweeps across your desktop.
+            <br><br>
+            <strong>Features:</strong> Custom text, font, size and text color.
+            Choose between Glass and Solid styles, with adjustable blur,
+            glass brightness and line thickness. Includes startup delay,
+            Live Glass, a replay hotkey and battery-saving options.
+        </p>
+
+    </article>
+
+</main>
+
+<footer>
+    MAX_XD811 — MODS
+</footer>
+
+</body>
+</html>
